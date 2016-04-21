@@ -1,14 +1,13 @@
 // LOAD PACKAGES
 var mongoose	= require('mongoose');
-var Shema		= mongoose.Schema;
+var Schema		= mongoose.Schema;
 var bcrypt		= require('bcrypt-nodejs')
 
 
 // USER SCHEMA
-
 var UserSchema = new Schema({
 	name: String,
-	username: { type: String, required: true, index: { unique: true}},
+	username: { type: String, required: true, index: { unique: true }},
 	password: { type: String, required: true, select: false }
 });
 

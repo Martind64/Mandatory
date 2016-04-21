@@ -33,6 +33,8 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 //ROUTES
+var apiRoutes = require('./app/routes/authentication')(app, express);
+app.use('/api', apiRoutes);
 
 
 // MAIN CATCHALL ROUTE
