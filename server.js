@@ -38,6 +38,9 @@ var apiRoutes = require('./app/routes/authentication')(app, express);
 app.use('/api', apiRoutes);
 
 
+// User routes
+var userRoutes = require('./app/routes/user')(app, express);
+app.use('/api', userRoutes);
 
 // MAIN CATCHALL ROUTE
 // SEND USERS TO FRONTEND
