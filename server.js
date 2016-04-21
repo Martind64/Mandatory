@@ -33,14 +33,18 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 //ROUTES
-// Authentication Route
+// ANIMAL ROUTES
 var apiRoutes = require('./app/routes/authentication')(app, express);
 app.use('/api', apiRoutes);
 
 
-// User routes
+// USER ROUTES
 var userRoutes = require('./app/routes/user')(app, express);
 app.use('/api', userRoutes);
+
+// ANIMAL ROUTES
+var animalRoutes = require('./app/routes/animal')(app, express);
+app.use('/api', animalRoutes);
 
 // MAIN CATCHALL ROUTE
 // SEND USERS TO FRONTEND

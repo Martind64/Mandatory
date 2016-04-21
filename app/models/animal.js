@@ -11,4 +11,4 @@ var AnimalSchema = new Schema(
  	speed: String 
 });
 
-module.exports = mongoose.model('Animal', AnimaSchema);
+module.exports = mongoose.model('Animal', AnimalSchema);
