@@ -32,6 +32,10 @@ app.use(morgan('dev'));
 // static files location
 app.use(express.static(__dirname + '/public'));
 
+
+
+
+
 //ROUTES
 // ANIMAL ROUTES
 var apiRoutes = require('./app/routes/authentication')(app, express);
