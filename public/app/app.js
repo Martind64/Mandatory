@@ -3,7 +3,9 @@ angular.module('Mandatory', [
 	'authService',
 	'mainCtrl',
 	'userCtrl',
-	'userService'
+	'userService',
+	'animalService',
+	'animalCtrl'
 	])
 
 

@@ -1,0 +1,54 @@
+<div class="page-header">
+	<h1 ng-if="animal.type == 'create'">Create animal</h1>
+	<h1 ng-if="animal.type == 'edit'">Edit animal</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="animal.saveanimal()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">type</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="animal.animalData.type">
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Gender</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="animal.animalData.gender">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Weight</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="animal.animalData.weight">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Speed</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="animal.animalData.weight">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-6">
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="animal.type == 'create'">Create animal</button>
+
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="animal.type == 'edit'">Edit animal</button>
+		</div>
+	</div>
+
+
+</form>
+
+<div class="row show-hide-message" ng-show="animal.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		<div class="alert alert-info">
+			{{ animal.message }}
+		</div>
+	</div>
+</div>
