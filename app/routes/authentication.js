@@ -41,7 +41,7 @@ module.exports = function(app, express)
 					res.json(
 					{
 						success: false,
-						message: 'Authentication failes. Wrong password'
+						message: 'Authentication failed. Wrong password'
 					});
 				}
 				else
