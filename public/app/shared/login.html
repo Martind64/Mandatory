@@ -1,12 +1,34 @@
-<div class="container">
+<div class="row col-sm-6 col-sm-offset-3">
 	
-	<form action="" method="POST">
-		
-		<input type="text" name="username" placeholder="enter username...">
-		<input type="password" name="password" placeholder="*******">
+	<div class="jumbotron">
+		<h1>Login</h1>
 
-		<button class="btn btn-default" type="submit">Login</button>	
+		<form ng-submit="login.doLogin()">
+			
+			<!-- USERNAME INPUT -->
+			<div class="form-group">
+				<label>Username</label>
+				<input type="text" class="form-control" ng-model="login.loginData.username">
+			</div>
 
-	</form>
+			<!-- PASSWORD INPUT -->
+			<div class="form-group">
+				<label>Password</label>
+				<input type="password" class="form-control" ng-model="login.loginData.password">
+			</div>
+
+			<div class="alert alert-danger" ng-if="login.error">
+				{{ login.error }}
+			</div>
+			<!-- LOGIN BUTTON -->
+			<button type="submit" class="btn btn-block btn-primary">
+				<span ng-if="!login.processing">Login</span>
+				<span ng-if="login.processing" class="spinner"><span class="glyphicon glyphicon-repeat"></span></span>
+			</button>
+
+		</form>
+	</div>
+
+
 
 </div>
