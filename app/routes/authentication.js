@@ -66,7 +66,7 @@ module.exports = function(app, express)
 	});
 
 	// Middleware to use for all requests
-	app.use(function(req, res, next)
+	apiRouter.use(function(req, res, next)
 	{
 		// Check header or url parameters or post parameters for token
 		var token = req.body.token || req.param('token') || req.headers['x-access-token'];

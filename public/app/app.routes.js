@@ -10,9 +10,12 @@ angular.module('app.routes', ['ngRoute'])
 		templateUrl : 'app/shared/homepage.html'
 	})
 
-	.when('/login', {
-		templateUrl : 'app/shared/login.html'
-	})
+	// login page
+		.when('/login', {
+			templateUrl : 'app/shared/login.html',
+				controller : 'mainController',
+				controllerAs: 'login'
+		})
 
 	// get rid of the hash in the url
 	$locationProvider.html5Mode(true);
