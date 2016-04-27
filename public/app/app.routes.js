@@ -39,7 +39,7 @@ angular.module('app.routes', ['ngRoute'])
 			templateUrl : 'app/views/users/single.html',
 				controller : 'userEditController',
 				controllerAs : 'user'
-		});
+		})
 
 
 
@@ -57,14 +57,14 @@ angular.module('app.routes', ['ngRoute'])
 
 		// form to create a new animal
 		// same view as EDIT PAGE
-		.when('/animals/create', {
+		.when('/animal/create', {
 			templateUrl : 'app/views/animals/single.html',
 				controller : 'animalCreateController',
 				controllerAs : 'animal'
 		})
 
 		// page to edit a animal
-		.when('/animals/:user_id', {
+		.when('/animal/:animal_id', {
 			templateUrl : 'app/views/animals/single.html',
 				controller : 'animalEditController',
 				controllerAs : 'animal'

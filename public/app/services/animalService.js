@@ -6,12 +6,12 @@ angular.module('animalService', [])
 
 		//get an animal
 		animalFactory.get = function(id) {
-			return $http.get('/api/animals/' + id);
+			return $http.get('/api/animal/' + id);
 		};
 
 		// get all animals
 		animalFactory.all = function() {
-			return $http:get('/api/animals');
+			return $http.get('/api/animals');
 		};
 
 		// create a new animal
@@ -21,12 +21,12 @@ angular.module('animalService', [])
 
 		// update an animal
 		animalFactory.update = function(animalData) {
-			return $http.put('/api/animals/' + id, animalData);
+			return $http.put('/api/animal/' + id, animalData);
 		};
 
 		// delete an animal
-		animalFactory.delete = function(animalData) {
-			return $http.delete('/api/animals/' + id);
+		animalFactory.delete = function(id) {
+			return $http.delete('/api/animal/' + id);
 		};
 
 

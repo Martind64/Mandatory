@@ -3,35 +3,30 @@ angular.module('animalCtrl', ['animalService'])
 	.controller('animalController', function(Animal) {
 		var vm = this;
 
-		User.all()
+		
+
+
+
+		Animal.all()
 			.success(function(data) {
 				vm.animals = data;
 			});
 
 
-		vm.deleteUser = function(id) {
-
-			Animal.delete(id)
-				.success(function(data) {
-					Animal.all()
-						.success(function(data) {
-							vm.animals = data;
-						});
-				});
-		};
+		
 
 	})
 
 
 
 	// animal creation
-	.controller('animalCreateController', function(Animal) {
+	.controller('animalCreateController', function($location, Animal) {
 		var vm = this;
 
 		vm.type = "create";
 
 
-		vm.saveUser = function() {
+		vm.saveAnimal = function() {
 
 			vm.message = "";
 
@@ -41,6 +36,7 @@ angular.module('animalCtrl', ['animalService'])
 
 					vm.animalData = {};
 					vm.message = data.message;
+					$location.path('/animals');
 				});
 
 
@@ -50,23 +46,43 @@ angular.module('animalCtrl', ['animalService'])
 
 
 	// animal update
-	.controller('animalEditController', function(Animal) {
+	.controller('animalEditController', function($routeParams, $location, Animal) {
 		var vm = this;
 
 		vm.type = 'edit';
 
+		Animal.get($routeParams.animal_id)
+			.success(function(data) {
+				vm.animalData = data;
+			});
+
 		vm.saveAnimal = function() {
 			vm.message = "";
 
-			Animal.get($routeParams.user_id, vm.animalData)
+			Animal.get($routeParams.animal_id, vm.animalData)
 				.success(function(data) {
 
 					//clear form
 					vm.animalData = {};
+					$location.path('/animals');
 
-					vm.message = data.message;
+					
 			});
+
 		};
+
+		vm.deleteAnimal = function(id) {
+
+			Animal.delete(id)
+				.success(function(data) {
+					Animal.all()
+						.success(function(data) {
+							vm.animals = data;
+							$location.path('/animals');
+						});
+				});
+		};
+		
 	})
 
 

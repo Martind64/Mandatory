@@ -1,9 +1,11 @@
+<ng-include src="'app/shared/navbar.html'"/>
 <div class="page-header">
+	<button ng-if="animal.type == 'edit'" class="btn btn-danger btn-lg pull-right" id="delBtn" ng-click="animal.deleteAnimal(animal.animalData._id)">Delete</button>
 	<h1 ng-if="animal.type == 'create'">Create animal</h1>
 	<h1 ng-if="animal.type == 'edit'">Edit animal</h1>
 </div>
 
-<form class="form-horizontal" ng-submit="animal.saveanimal()">
+<form class="form-horizontal" ng-submit="animal.saveAnimal()">
 	
 	<div class="form-group">
 		<label class="col-sm-2 control-label">type</label>
@@ -30,7 +32,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Speed</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" ng-model="animal.animalData.weight">
+			<input type="text" class="form-control" ng-model="animal.animalData.speed">
 		</div>
 	</div>
 

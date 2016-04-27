@@ -1,3 +1,4 @@
+<ng-include src="'app/shared/navbar.html'"/>
 <div class="page-header">
 	<h1>
 		Animals
@@ -14,7 +15,6 @@
 	<span class="glyphicon glyphicon-repeat spinner"></span>
 	<p>Loading animals.....</p>
 </div>
-
 
 <table class="table table-bordered table-striped" ng-show="animal.animals">
 	<thead>
@@ -35,8 +35,7 @@
 			<td>{{ animal.weight }}</td>
 			<td>{{ animal.speed }}</td>
 			<td class="col-sm-2">
-				<a ng-href="/animals/{{ animal._id }}" class="btn btn-danger">Edit</a>
-				<a href="#" ng-click="animal.deleteAnimal(animal._id)" class="btn btn-primary">Delete</a>
+				<a ng-href="/animal/{{ animal._id }}" class="btn btn-danger">Edit</a>
 			</td>
 		</tr>
 	</tbody>
