@@ -1,5 +1,6 @@
 <ng-include src="'app/shared/navbar.html'"/>
 <div class="page-header">
+	<button ng-if="user.type == 'edit'" class="btn btn-danger btn-lg pull-right" id="delBtn" ng-click="user.deleteUser(user.userData._id)">Delete</button>
 	<h1 ng-if="user.type == 'create'">Create user</h1>
 	<h1 ng-if="user.type == 'edit'">Edit user</h1>
 </div>

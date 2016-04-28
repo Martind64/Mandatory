@@ -19,7 +19,6 @@
 <table class="table table-bordered table-striped" ng-show="animal.animals">
 	<thead>
 		<tr>
-			<th>_id</th>
 			<th>type</th>
 			<th>gender</th>
 			<th>weight</th>
@@ -29,13 +28,12 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="animal in animal.animals">
-			<td>{{ animal._id }}</td>
 			<td>{{ animal.type }}</td>
 			<td>{{ animal.gender }}</td>
 			<td>{{ animal.weight }}</td>
 			<td>{{ animal.speed }}</td>
 			<td class="col-sm-2">
-				<a ng-href="/animal/{{ animal._id }}" class="btn btn-danger">Edit</a>
+				<a ng-href="/animal/{{ animal._id }}" class="btn btn-success">Edit</a>
 			</td>
 		</tr>
 	</tbody>
