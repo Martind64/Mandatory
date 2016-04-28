@@ -7,7 +7,7 @@ angular.module('authService', [])
 	// inject $q to return promise objects
 	// inject authtoken to manage tokens
 	//====================
-	.factory('Auth', function($http, $q, AuthToken) {
+	.factory('Auth', function($http, $q, $location, AuthToken) {
 
 		// create auth factory object
 		var authFactory = {};
@@ -30,6 +30,7 @@ angular.module('authService', [])
 		authFactory.logout = function () {
 			//clear the token
 			AuthToken.setToken();
+			$location.path('/');
 		};
 
 		// check if a user is logged in
@@ -83,7 +84,7 @@ angular.module('authService', [])
 	//====================
 	// application configuration to integrate token into requests
 	//====================
-	.factory('AuthInterceptor', function($q, AuthToken) {
+	.factory('AuthInterceptor', function($q, $location, AuthToken) {
 
 		var interceptorFactory = {};
 
